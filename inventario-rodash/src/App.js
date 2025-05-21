@@ -1,44 +1,37 @@
+import React, { useState } from 'react';
 import './App.css';
-import { useState } from 'react';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className={`App ${darkMode ? 'dark-mode' : 'light-mode'}`}>
-      <header className="App-header">
-        <div className="app-name">Gestión de Inventario</div>
-        <p>Bienvenido a la aplicación de inventario de tu negocio.</p>
-        <div className="settings">
-          <button onClick={toggleTheme}>
-            Cambiar a {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
-          </button>
-        </div>
-      </header>
-      <div className="App-content">
-        <h2>Lista de Productos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Aquí se mostrarán los productos */}
-          </tbody>
-        </table>
-        <button onClick={() => alert('Agregar producto')}>Agregar Producto</button>
-      </div>
-        <div className="footer">
-          <p>© 2023 Inventario Rodash. Todos los derechos reservados.</p>
-      </div>
+    <div className="App">
+      <nav className="navbar">
+        {/* Botón de hamburguesa al lado izquierdo del logo */}
+        <button className="menu-toggle" onClick={toggleMenu}>
+          &#9776;
+        </button>
+        <div className="logo">Mi App</div>
+
+        {/* Menú de navegación */}
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          {/* Botón de cierre en móvil (el mismo ícono) */}
+          <li className="close-toggle">
+            <button onClick={closeMenu}>&#9776;</button>
+          </li>
+          <li><a href="#" onClick={closeMenu}>Inicio</a></li>
+          <li><a href="#" onClick={closeMenu}>Acerca</a></li>
+          <li><a href="#" onClick={closeMenu}>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1>Bienvenido a mi app</h1>
+        <p>Contenido principal aquí.</p>
+      </main>
     </div>
   );
 }

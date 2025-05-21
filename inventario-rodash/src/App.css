@@ -1,47 +1,117 @@
-div {
-  border: 1px solid blue;
-  padding: 4px;
-  margin: 4px;
+@import './styles/variables.css';
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App {
-  text-align: center;
+body, html {
+  font-family: sans-serif;
 }
 
-.App-header {
+/* General */
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  color: var(--text-on-dark);
+  padding: 0.5rem 1rem;
+  position: relative;
 }
 
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-text);
   cursor: pointer;
 }
 
-.settings {
-  margin-top: 20px;
+.logo {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: var(--color-text);;
 }
 
-.app-content {
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+.nav-links {
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  color: var(--color-text);;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+/* Desktop nav */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  color: var(--color-text);;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    margin-left: 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--background-light);
+    padding-top: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .close-toggle {
+    display: block;
+    text-align: right;
+    padding: 1rem;
+  }
+
+  .close-toggle button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color-text);;
+    cursor: pointer;
+  }
 }

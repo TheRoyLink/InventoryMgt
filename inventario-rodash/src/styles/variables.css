@@ -1,0 +1,24 @@
+:root {
+    /* --- Colores Principales --- */
+    --color-primary: #2C3E50;          /* Azul Corporativo (Barra de navegación, botones principales) */
+    --color-secondary: #2ECC71;        /* Verde Aqua (Botones secundarios, indicadores de stock) */
+
+    /* --- Colores de Texto --- */
+    --text-primary: #34495E;           /* Gris Oscuro (Texto principal, títulos) */
+    --text-secondary: #7F8C8D;         /* Gris Medio (Texto secundario, placeholders) */
+    --text-on-dark: #FFFFFF;           /* Blanco (Texto sobre fondos oscuros) */
+
+    /* --- Colores de Fondo --- */
+    --background-light: #FFFFFF;       /* Blanco Puro (Fondo principal de pantallas) */
+    --background-neutral: #ECF0F1;     /* Gris Muy Claro (Áreas diferenciadas, barras laterales) */
+
+    /* --- Colores de Acento y Estado --- */
+    --accent-success: #27AE60;         /* Verde Esmeralda (Mensajes de éxito, disponible) */
+    --accent-warning: #F39C12;         /* Naranja Suave (Advertencias, stock bajo) */
+    --accent-error: #E74C3C;           /* Rojo Fuego (Errores, agotado, eliminar) */
+
+    /* --- Colores para Hover (Estados interactivos) --- */
+    --hover-primary: #34495E;          /* Un tono un poco más claro del primario para hover */
+    --hover-secondary: #28B463;        /* Verde Aqua Oscuro para hover */
+    --hover-link: #3498DB;             /* Azul Marino Claro para enlaces al pasar el ratón */
+}
